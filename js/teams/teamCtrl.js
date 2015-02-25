@@ -25,11 +25,12 @@ app.controller('teamCtrl', function($scope, $routeParams, teamService, teamData)
     }
     $scope.submitGame = function() {
       $scope.homeTeam = $scope.homeTeam.split(' ').join('').toLowerCase();
-      teamService.addNewGame($scope.newGame).then(function(res) {
+      teamService.addNewGame($scope.newGame).then(function() {
           teamService.getTeamData($scope.newGame.homeTeam).then(function(res){
               $scope.teamData = res;
-              $scope.newGame = [];
+              $scope.newGame = {};
               $scope.showNewGameForm = false;
+              console.log($scope.teamData);
           });
       });
     };
