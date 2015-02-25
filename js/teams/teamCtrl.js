@@ -30,7 +30,6 @@ app.controller('teamCtrl', function($scope, $routeParams, teamService, teamData)
               $scope.teamData = res;
               $scope.newGame = {};
               $scope.showNewGameForm = false;
-              console.log($scope.teamData);
           });
       });
     };
